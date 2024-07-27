@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://der0dimk1yoqw"]
+
+[ext_resource type="Texture2D" uid="uid://dwb5jj06xguhw" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_r6guv"]
+[ext_resource type="Script" path="res://UI/game_ui.gd" id="1_xtm8k"]
+[ext_resource type="Texture2D" uid="uid://xaxljw3rav8f" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_bfd6r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivwf5"]
+texture = ExtResource("1_r6guv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsyed"]
+font_size = 24
+font_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xao7"]
+atlas = ExtResource("3_bfd6r")
+region = Rect2(32, 48, 72, 56)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_xtm8k")
+
+[node name="TimeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 22.0
+offset_right = 46.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "08:50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_right = -0.0286458
+anchor_bottom = 0.00308642
+offset_left = 916.0
+offset_top = 3.0
+offset_right = 939.0
+offset_bottom = 29.0
+scale = Vector2(10.4061, 1.70385)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ivwf5")
+metadata/_edit_use_anchors_ = true
+
+[node name="MeatLabel" type="Label" parent="Panel4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.47161
+offset_top = 3.03839
+offset_right = 100.529
+offset_bottom = 37.0384
+grow_horizontal = 2
+scale = Vector2(0.0704233, 0.475513)
+text = "50"
+label_settings = SubResource("LabelSettings_wsyed")
+
+[node name="TextureRect" type="TextureRect" parent="Panel4"]
+layout_mode = 0
+offset_left = 14.6405
+offset_top = -4.34056
+offset_right = 142.64
+offset_bottom = 123.659
+scale = Vector2(0.0402171, 0.220528)
+texture = SubResource("AtlasTexture_4xao7")
